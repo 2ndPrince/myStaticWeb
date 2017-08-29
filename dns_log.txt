@@ -1,0 +1,18 @@
+gcloud dns managed-zones create --dns-name="youngseoklee.com." --description="A zone" "youngseoklee"
+
+
+gcloud dns record-sets export -z=youngseoklee1234 --zone-file-format ysl.zone
+->
+youngseoklee.com. 21600 IN NS ns-cloud-a1.googledomains.com.
+youngseoklee.com. 21600 IN NS ns-cloud-a2.googledomains.com.
+youngseoklee.com. 21600 IN NS ns-cloud-a3.googledomains.com.
+youngseoklee.com. 21600 IN NS ns-cloud-a4.googledomains.com.
+youngseoklee.com. 21600 IN SOA ns-cloud-a1.googledomains.com. cloud-dns-hostmaster.google.com. 1 21600 3600 259200 300
+
+
+
+gcloud dns record-sets list --zone="youngseoklee"
+->
+NAME               TYPE  TTL    DATA
+youngseoklee.com.  NS    21600  ns-cloud-a1.googledomains.com.,ns-cloud-a2.googledomains.com.,ns-cloud-a3.googledomains.com.,ns-cloud-a4.googledomains.com.
+youngseoklee.com.  SOA   21600  ns-cloud-a1.googledomains.com. cloud-dns-hostmaster.google.com. 1 21600 3600 259200 300

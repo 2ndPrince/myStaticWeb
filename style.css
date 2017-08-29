@@ -1,0 +1,221 @@
+<style>
+
+/* Menu Bar */
+	#anything{
+		
+	}
+	
+	#topMenu{
+		height: 30px;
+		width: 850px; /*850px*/
+		margin:0 auto;
+		text-align: center;
+	}	
+	#topMenu ul li{
+		list-style: none;
+		color: white;
+		background-color: #2d2d2d;
+		float: left;	
+		line-height: 30px;
+		vertical-align: middle;
+		text-align: center;
+	}
+	#topMenu .menuLink{
+		text-decoration: none;
+		color: white;
+		display: block;
+		width: 150px;
+		font-size: 12px;
+		font-weight: bold;
+		font-family: "Trebuchet MS", Dotum, Arial;
+	}
+	#topMenu .menuLink:hover{
+		color:red;
+		background-color: #4d4d4d;
+	}
+	
+	#bgTop{
+		background: url("matrix.jpg");
+		height: 200px;
+		margin: auto;
+		padding: 20px;		
+	}
+	
+/*-----------------------------------------------*/
+
+/*
+	nav {
+		border-right:5px solid gray;
+		width:150px;
+		float:left;
+		height:100px;
+	}
+	nav ol{
+		list-style: none;
+	}
+*/	
+	#leftMenu{
+		float: left;
+		padding: 0px;
+		width: 180px;
+		font-size: 12px;
+		font-family: Arial;
+	}
+	#leftMenu ul {
+		background-color: #F6EEDA;
+		margin-top: -15px;
+		list-style: none;
+		border-top: 1px solid black;
+		border-bottom: 1px solid black;
+		border-left: 1px solid black;
+		border-right: 1px solid black;
+	}
+	#leftMenu ul li {
+		border: 0px;
+		margin-top: 15px;
+		margin-left: -25px;
+		margin-bottom: 10px;
+	}
+	
+	article {
+		float:left;
+		/*top right bottom left*/
+		padding:0px 0px 0px 30px;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+	
+	td div{ width: 100px; overflow-y: hidden; }
+	
+	SECTION#Wrapper {
+	float: left;
+	width: 700px;
+	margin-top: 5px;
+	margin-left: 40px;
+	margin-right: 5px;
+	margin-bottom: 50px;
+	}
+
+	
+	H2#Article {
+	text-align: center;
+	color: #6666EE;
+	font-size: 30px;}
+	
+	h2 {
+		font-size:30px;	
+		text-align: center;		
+	}
+	
+	h4 {
+    text-align: middle;
+	}
+	h5 {
+    text-align: left;
+	}
+	
+	p.one{
+		border-style: solid;
+		border-width: 5px;
+	}
+	
+	p.two{
+		border-style: solid;
+		border-width: medium;
+	}
+	
+	div{
+		font-family: Helvetica;
+		font-size: 18px;
+		/*
+		font-size: 100%;
+		font-style: normal;
+		font-style: italic;
+		font-style: oblique;
+		*/
+	}
+	/*section1 has the biggest margin */
+	div.section1{
+		padding:10px;
+		
+		/*     top, right, bottom, left*/		
+		margin:40px 0 250px 50px; /* was 40 0 100 50 */
+		/*alternatively ,margin-top:100px;*/ 
+
+		color: navy;
+		border-bottom:1px dotted;
+		height:50px;
+		width:90%;
+	}
+	div.section2{
+		padding:10px;
+		
+		/*     top, right, bottom, left*/		
+		margin:40px 0 200px 50px; /* was 40 0 100 50 */
+		/*alternatively ,margin-top:100px;*/ 
+
+		color: navy;
+		border-bottom:1px dotted;
+		height:50px;
+		width:90%;
+	}
+	div.section3{
+		padding:10px;
+		
+		/*     top, right, bottom, left*/		
+		margin:40px 0 150px 50px; /* was 40 0 100 50 */
+		/*alternatively ,margin-top:100px;*/ 
+
+		color: navy;
+		border-bottom:1px dotted;
+		height:50px;
+		width:90%;
+	}
+	div.section4{
+		padding:10px;
+		
+		/*     top, right, bottom, left*/		
+		margin:40px 0 100px 50px; /* was 40 0 100 50 */
+		/*alternatively ,margin-top:100px;*/ 
+
+		color: navy;
+		border-bottom:1px dotted;
+		height:50px;
+		width:90%;
+	}
+	
+	
+	
+	/*Margin between bullet points*/
+	div li{
+		margin-bottom:10px;
+	}
+	body.black{
+		background-color : black;
+		color : white;
+	}
+	body.black a{
+		color: white;
+	}
+	body.white{
+		background-color : white;
+		color : black;
+	}
+	
+	/*Gray Box*/
+	#rectangle{
+		width:100%;
+		height:80px;
+		background:#DCDCDC;
+	}
+	#control{
+		float:right;
+		padding:10px;
+	}
+	
+	.links_content {
+ 	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	margin-left: 2em;
+}
+
+</style>

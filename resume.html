@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+	<title>Home Page</title>
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta charset="utf-8"/>
+	<meta name="description" content="Youngseok Lee Personal Blog"/>
+	<meta name"author" content="astonisher88@gmail.com" />
+	<link rel="stylesheet" href="style.css">	
+	<style type="text/css"> a {text-decoration:none;} </style>
+</head>
+<body id="target">
+	<div id="bgTop"><h1><a href="index.html"><font color="white"><p align="center">YOUNGSEOK LEE</p></font></a></h1></div>
+	<header>
+	</header>
+
+	<div id="rectangle"></div>	
+
+	<nav>
+		<ol>
+			<?php
+			// read list.txt and print ( file_get_contents(''); )			
+			//echo file_get_contents('./list.txt');
+			?>
+		</ol>	
+	</nav>
+	
+	<nav id="topMenu">
+	<ul>
+		<li><a class="menuLink" href="about_me.html">About me</a></li>
+		<li><a class="menuLink" href="resume.html">Resume</a></li>
+		<li><a class="menuLink" href="project.html">Project Portfolio</a></li>
+		<li><a class="menuLink" href="programming.html">Programming Reference</a></li>
+		<li><a class="menuLink" href="contact.html">Contact</a></li>
+	</ul>
+	</nav>	
+<p>Updated on Aug/26th/2017</p>
+<div class="section3">
+		<h2>Education</h2>
+			<li><a href="https://www.usc.edu/">University of Southern California: MS in Electrical Engineering, Fall.2014-Spring.2016</a></li>
+			<li><a href="http://www.gatech.edu/">Georgia Institute of Technology: BS in Electrical Engineering, Fall.2009-Fall.2012</a></li>
+	</div>
+
+	
+	<div class="section1">
+		<h2>Work Experience</h2>
+			<li>Cypress Semiconductor (Seattle, WA):Test Engineer, Jan.2016-Feb.2017 (Moved to Shreveport, LA after Marriage)</li>
+			    - Test Engineer responsible for Automated Testing Equipments (ATE) in C++ <br>
+			    - Design/Modify Test Program for Facility & Customer Defects <br><br><br>
+			<li>KMW Communications (Fullterton, CA) :Internship in Power Amplifier Team, Apr.2015-Jun.2015</li>
+			    - Improved the performance of PA by Cap tuning on PCB board <br>
+			    - Proficient in Lab Equipments: Oscilloscope, Network/Signal Analyzer and etc <br><br><br>
+	</div>
+	
+	
+	<div class="section3">
+		<h2>Projects</h2>
+			<li>Design/Maintain C++ Test Program for Automated Test Equipment(ATE) in wafer fabrication facility</li>
+			<li>Topics include: FLASH, SRAM, USB, GPIO, IMO and I2C</li>
+	</div>
+	
+
+	
+	<div class="section2">
+		<h2>Skills</h2>
+			<li>Fundamental Understanding of Intergrated Circuit(IC) Architecture, Programming(C++, Python)</li>
+			<li>SW&HW Tools: Cadence Virtuoso, MATLAB, Oscilloscope, Network/Signal Analyzer(RF)</li>
+			<li>Others: Winform, Web Application(HTML,CSS)</li>
+			<li>Program Algorithms. Data Structure</li>
+			<li>Understanding of Intergrated Circuit(IC) Architecture, Programming(C++, Python)</li>
+			<li>SW&HW Tools: Cadence Virtuoso, MATLAB, Oscilloscope, Network/Signal Analyzer(RF)</li>
+	</div>
+	
+	
+	
+		
+
+	
+	<nav>
+		<ol>
+			<?php
+			//echo file_get_contents('list.txt');
+			?>			
+		</ol>
+	</nav>
+	<div id="control">		
+		<input type="button" value="black" onclick="
+		document.getElementById('target').className = 'black';
+		">
+		<input type="button" value="white" onclick="
+		document.getElementById('target').className = 'white';
+		">
+	</div>
+	<article>
+		<?php
+		$filename = $_GET['id'].'.txt';
+		//echo $filename;		
+		?>
+	</article>	
+	
+	
+</body>	
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+	<title>Home Page</title>
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta charset="utf-8"/>
+	<meta name="description" content="Youngseok Lee Personal Blog"/>
+	<meta name"author" content="astonisher88@gmail.com" />
+	<link rel="stylesheet" href="../../style.css">	
+	<style type="text/css"> a {text-decoration:none;} </style>
+</head>
+<body id="target">
+	<div id="bgTop"><h1><a href="../../index.html"><font color="white"><p align="center">YOUNGSEOK LEE</p></font></a></h1></div>
+	<header>
+	</header>
+
+	<div id="rectangle"></div>	
+
+	<nav>
+		<ol>
+			<?php
+			// read list.txt and print ( file_get_contents(''); )			
+			//echo file_get_contents('./list.txt');
+			?>
+		</ol>	
+	</nav>
+	
+	<nav id="topMenu">
+	<ul>
+		<li><a class="menuLink" href="../../about_me.html">About me</a></li>
+		<li><a class="menuLink" href="../../resume.html">Resume</a></li>
+		<li><a class="menuLink" href="../../project.html">Project Portfolio</a></li>
+		<li><a class="menuLink" href="../../programming.html">Programming Reference</a></li>
+		<li><a class="menuLink" href="../../contact.html">Contact</a></li>
+	</ul>
+	</nav>	
+	
+		<h2 ID="Article">Calculator</h2>
+		
+	<nav id="leftMenu">		
+		<ul>
+			<li><a href="../Winform.html">Winform</a></li>
+			<li><a href="../ASP_NET.html">ASP.NET</a></li>
+			<li><a href="../Algorithm.html">Algorithm Study</a></li>
+			<li><a href="../Data_Structure.html">Data Structure</a></li>
+			<li><a href="../Version_Control.html">Version Control Program</a></li>
+		</ul>
+	</nav>
+	
+	<SECTION ID="Wrapper"> 
+	<article>
+	<h3>Why calculator?</h3>
+	<p>
+	It is a great example to get familiar with Visual Studio and its Winform platform. 
+	All you need is basic programming knowledges such as making functions and calling variables.
+	Once you get used to the drag and drop interface & on-click trigger, VS takes care of anything else.
+	</p>
+	<p align="center"><a href="/MyCalculator.zip" target="_blank">Click to download Source File</a></p>
+	<p>Download the Visual Studio and create a Visual C# project for Windows Forms Application.</p>	
+	<p style="text-align:center"><img alt="" height="500" src="Calculator_VS2015.png" width="800" /></p>
+	<p>On Form1.cs [Design], Design the interface using the toolbox on left menu. Button and Textbox are all we need.</p>
+	<p style="text-align:center"><img alt="" height="363" src="Calculator_Interface.png" width="722" /></p>
+	<p>Click button. Go to its properties. Each button has name that we can call, and values assigned. 0 to button "0", + to button "+"
+	On button click, its value can be handled in C# to form a program. (here calculator)</p>
+	<p style="text-align:center"><img alt="" height="563" src="Calculator_Button_Property.png" width="342" /></p>
+	<p>The picture below shows functionality for on click equal button.
+	<p style="text-align:center"><img alt="" height="410" src="Calculator_Code_Equal.png" width="611" /></p>
+	
+	<p align="center">
+	<a href="MyCalculator.exe">Download MyCalculator.exe</a></li>
+	</p>
+	<h3>Trouble Shootings</h3>
+	<li>Button value is string. Needs conversion to double for mathematic operations -> Double.Parse, ToString()</li>
+	<li>Clicking operator twice cracks the program -> Handles as exception</li>
+	<li>Prevent first digit 0 numbers such as 90 or 0053 -> Handles as exception</li>
+	
+	
+	</SECTION>
+
+</body>	
+</html>
+
+
+
