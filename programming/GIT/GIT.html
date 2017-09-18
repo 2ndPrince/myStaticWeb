@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+	<title>Home Page</title>
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta charset="utf-8"/>
+	<meta name="description" content="Youngseok Lee Personal Blog"/>
+	<meta name"author" content="astonisher88@gmail.com" />
+	<link rel="stylesheet" href="../../style.css">	
+	<style type="text/css"> a {text-decoration:none;} </style>
+</head>
+<body id="target">
+	<div id="bgTop"><h1><a href="../../index.html"><font color="white"><p align="center">YOUNGSEOK LEE</p></font></a></h1></div>
+	<header>
+	</header>
+
+	<div id="rectangle"></div>	
+
+	<nav>
+		<ol>
+			<?php
+			// read list.txt and print ( file_get_contents(''); )			
+			//echo file_get_contents('./list.txt');
+			?>
+		</ol>	
+	</nav>
+	
+	<nav id="topMenu">
+	<ul>
+		<li><a class="menuLink" href="../../about_me.html">About me</a></li>
+		<li><a class="menuLink" href="../../resume.html">Resume</a></li>
+		<li><a class="menuLink" href="../../project.html">Project Portfolio</a></li>
+		<li><a class="menuLink" href="../../programming.html">Programming Reference</a></li>
+		<li><a class="menuLink" href="../../contact.html">Contact</a></li>
+	</ul>
+	</nav>	
+	
+		<h2 ID="Article">GIT</h2>
+		
+	<nav id="leftMenu">		
+		<ul>
+			<li><a href="../Winform.html">Winform</a></li>
+			<li><a href="../Version_Control.html">Version Control Program</a></li>
+			<li><a href="../Web_Service.html">Web Service</a></li>
+			<li><a href="../Design_Web.html">How to Design a Website</a></li>
+			<li><a href="../Host_Web.html">How to Host a Website</a></li>
+			<li><a href="../Algorithm.html">Algorithm Study</a></li>
+			<li><a href="../Data_Structure.html">Data Structure</a></li>
+		</ul>
+	</nav>
+	
+	<SECTION ID="Wrapper"> 
+	<article>
+	<h3>Why GIT?</h3>
+	<div align="right"><h6>Updated on Aug 29th, 2017</h6></div>
+	
+	<p>
+	GIT is the most powerful and popular version control software.<br>
+	Here, it covers simple but most effective functions such as 
+	commit/revert change and branch.
+	</p>
+	<p>
+	"Commit" uploads files to the GIT storage.<br> We want to commit files after we make desired changes. <br><br>
+	"Revert" returns files to older versions.<br> We want to revert files once current files are so corrupted to fix. <br><br>
+	For example, we designed a calculator winform application. By committing our calculator project, our source files are safe and always there.
+	The next day, we tried something new on the calculator program by modifying 10 source files and after all they did not quite go well. 
+	Don't worry. We can simply revert back to our old files from yesterday like time travelling. 
+	</p>
+	<hr>
+	<p>
+	"Branch" makes the calculator revert work even easier. Whenever we want to try something new, 
+	we don't know whether the experiment will work and we want to commit our changes.<br><br>
+	This is when we branch our work from master branch to test(I named) branch. The test branch will
+	have exact copies of our master data and we are free to apply our experiments. 
+	We can diff what files are updated and decide to include.<br><br>	
+	</p>
+	<hr>
+	<p style="text-align:center"><img alt="" height="548" src="GIT_Desktop.png" width="800" /></p>
+	<p>There are two location access to GIT available: Web and Desktop. Once we install desktop version, 
+	our local files are under the full control. Local environment speeds up the work. The left section (picture above) specifies 
+	what changes I have made: This case, we have added a file called "Version_Control.html." It is always good to 
+	write comments on commit for future memory.</p>
+	<hr>
+	<p style="text-align:center"><img alt="" height="280" src="GIT_Desktop_Revert.png" width="800" /></p>
+	<p>Go to the history tab and right click to see the revert message. We can simply revert our recent changes to 
+	any older version we wish to. To find what old versions to revert back, comments are always helpful to decide although
+	GIT shows the file diff. </p>
+	<hr>
+	<p style="text-align:center"><img alt="" height="283" src="GIT_Desktop_Diff.png" width="800" /></p>
+	<p>Suppose we have modified the file. The GIT keeps track of changes line 82 and 83 two red highlights are removed with
+	the green ones added. To create branch, click on the top menu tab branch, and start new work from there. The picture is
+	on master branch (by default), we can select any other branch and publish branch (commit to master).</p>
+		
+	<hr>
+	<h3>Tips</h3>
+	<li>Delete the branch once merged to master</li>
+	<li>Write comments in detail using figures such as "-" and "*" along with words "Initial" and "Completed"</li>
+	
+	
+	
+	</SECTION>
+
+</body>	
+</html>
+
+
+

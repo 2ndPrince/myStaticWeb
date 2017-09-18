@@ -1,8 +1,11 @@
 <style>
 
 /* Menu Bar */
-	#anything{
-		
+	#myMiddle {
+		height: 30px;
+		width: 850px; /*850px*/
+		margin:0 auto;
+		text-align: center;
 	}
 	
 	#topMenu{
@@ -41,25 +44,38 @@
 		padding: 20px;		
 	}
 	
-/*-----------------------------------------------*/
 
-/*
-	nav {
-		border-right:5px solid gray;
-		width:150px;
-		float:left;
-		height:100px;
+
+/*------------------------------------------------------*/	
+/* For Resume */
+	#leftMargin{
+		float: left;
+		padding: 20px; /**/
+		width: 150px; /**/
+		font-size: 12px;
+		font-family: Arial;
 	}
-	nav ol{
-		list-style: none;
+	
+	SECTION#Resume {
+	float: left;
+	width: 820px; /**/
+	margin-top: 5px;
+	margin-left: 40px;
+	margin-right: 5px;
+	margin-bottom: 50px;
+	
 	}
-*/	
+/*------------------------------------------------------*/	
 	#leftMenu{
 		float: left;
 		padding: 0px;
 		width: 180px;
 		font-size: 12px;
 		font-family: Arial;
+		margin-top: 50px;
+		margin-left: 5%; /* Start from 25% and finish at 75% : ALL Center*/
+		width:180px; /* <div class="test0"> ~~ </div> */		
+		
 	}
 	#leftMenu ul {
 		background-color: #F6EEDA;
@@ -80,7 +96,7 @@
 	article {
 		float:left;
 		/*top right bottom left*/
-		padding:0px 0px 0px 30px;
+		padding:0px 0px 0px 30px; /* 30px to avoid overlapping */
 		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	}
 	
@@ -133,62 +149,62 @@
 		font-style: oblique;
 		*/
 	}
-	/*section1 has the biggest margin */
-	div.section1{
+/**********************************************************/	
+/******** margin50, 25 and section0 for resume ************/
+	div.margin50{
 		padding:10px;
 		
 		/*     top, right, bottom, left*/		
-		margin:40px 0 250px 50px; /* was 40 0 100 50 */
-		/*alternatively ,margin-top:100px;*/ 
-
-		color: navy;
-		border-bottom:1px dotted;
-		height:50px;
-		width:90%;
-	}
-	div.section2{
-		padding:10px;
-		
-		/*     top, right, bottom, left*/		
-		margin:40px 0 200px 50px; /* was 40 0 100 50 */
-		/*alternatively ,margin-top:100px;*/ 
-
-		color: navy;
-		border-bottom:1px dotted;
-		height:50px;
-		width:90%;
-	}
-	div.section3{
-		padding:10px;
-		
-		/*     top, right, bottom, left*/		
-		margin:40px 0 150px 50px; /* was 40 0 100 50 */
-		/*alternatively ,margin-top:100px;*/ 
-
-		color: navy;
-		border-bottom:1px dotted;
-		height:50px;
-		width:90%;
-	}
-	div.section4{
-		padding:10px;
-		
-		/*     top, right, bottom, left*/		
-		margin:40px 0 100px 50px; /* was 40 0 100 50 */
-		/*alternatively ,margin-top:100px;*/ 
-
-		color: navy;
-		border-bottom:1px dotted;
-		height:50px;
-		width:90%;
+		margin:40px 0 50px 50px; /* was 40 0 100 50 */
+		/*alternatively ,margin-top:100px;*/ 		
 	}
 	
+	div.margin25{
+		padding:10px;
+		
+		/*     top, right, bottom, left*/		
+		margin:40px 0 25px 50px; /* was 40 0 100 50 */
+		/*alternatively ,margin-top:100px;*/ 		
+	}
 	
+	div.section0{
+		padding:10px;
+		
+		/*     top, right, bottom, left*/		
+		margin:40px 0 100px 0px; /* was 40 0 100 50 */
+		/*alternatively ,margin-top:100px;*/ 
+		
+		margin-left: 25%; /* Start from 25% and finish at 75% : ALL Center*/
+		width:50%; /* <div class="section0"> ~~ </div> */
+		
+		color: navy;
+		border-bottom:1px dotted;
+		height:50px;		
+	}	
+	
+	div.bodyCenter{
+		padding:10px;		
+		/* top, right, bottom, left */		
+		margin:40px 0 100px 0px; 
+		
+		margin-left: 25%; /* Start from 25% and finish at 75% : ALL Center*/
+		width:50%; /* <div class="bodyCenter"> ~~ </div> */			
+	}
+	
+	#myMenu{
+		float: left;
+		padding: 0px;
+		width: 180px;
+		font-size: 12px;
+		font-family: Arial;
+	}
+/**********************************************************/		
 	
 	/*Margin between bullet points*/
 	div li{
 		margin-bottom:10px;
 	}
+	
 	body.black{
 		background-color : black;
 		color : white;

@@ -40,39 +40,46 @@
 	<nav id="leftMenu">		
 		<ul>
 			<li><a href="../Winform.html">Winform</a></li>
-			<li><a href="../ASP_NET.html">ASP.NET</a></li>
+			<li><a href="../Version_Control.html">Version Control Program</a></li>
+			<li><a href="../Web_Service.html">Web Service</a></li>
+			<li><a href="../Design_Web.html">How to Design a Website</a></li>
+			<li><a href="../Host_Web.html">How to Host a Website</a></li>
 			<li><a href="../Algorithm.html">Algorithm Study</a></li>
 			<li><a href="../Data_Structure.html">Data Structure</a></li>
-			<li><a href="../Version_Control.html">Version Control Program</a></li>
 		</ul>
 	</nav>
 	
 	<SECTION ID="Wrapper"> 
 	<article>
 	<h3>Why calculator?</h3>
+	<div align="right"><h6>Updated on July 28th, 2017</h6></div>
 	<p>
 	It is a great example to get familiar with Visual Studio and its Winform platform. 
-	All you need is basic programming knowledges such as making functions and calling variables.
+	All you need are basic programming knowledges such as making functions and calling variables.
 	Once you get used to the drag and drop interface & on-click trigger, VS takes care of anything else.
 	</p>
 	<p align="center"><a href="/MyCalculator.zip" target="_blank">Click to download Source File</a></p>
-	<p>Download the Visual Studio and create a Visual C# project for Windows Forms Application.</p>	
+	<hr>
+	<p>Download the Visual Studio and create a Visual C# project for Windows Forms Application.</p>		
 	<p style="text-align:center"><img alt="" height="500" src="Calculator_VS2015.png" width="800" /></p>
-	<p>On Form1.cs [Design], Design the interface using the toolbox on left menu. Button and Textbox are all we need.</p>
+	<hr>
+	<p>On Form1.cs [Design], Design the interface using the toolbox on left menu. Button and Textbox are all we need.</p>	
 	<p style="text-align:center"><img alt="" height="363" src="Calculator_Interface.png" width="722" /></p>
 	<p>Click button. Go to its properties. Each button has name that we can call, and values assigned. 0 to button "0", + to button "+"
 	On button click, its value can be handled in C# to form a program. (here calculator)</p>
 	<p style="text-align:center"><img alt="" height="563" src="Calculator_Button_Property.png" width="342" /></p>
+	<hr>
 	<p>The picture below shows functionality for on click equal button.
 	<p style="text-align:center"><img alt="" height="410" src="Calculator_Code_Equal.png" width="611" /></p>
 	
 	<p align="center">
 	<a href="MyCalculator.exe">Download MyCalculator.exe</a></li>
 	</p>
+	<hr>
 	<h3>Trouble Shootings</h3>
 	<li>Button value is string. Needs conversion to double for mathematic operations -> Double.Parse, ToString()</li>
 	<li>Clicking operator twice cracks the program -> Handles as exception</li>
-	<li>Prevent first digit 0 numbers such as 90 or 0053 -> Handles as exception</li>
+	<li>Prevent first digit 0 numbers such as 090 or 0053 -> Handles as exception</li>
 	
 	
 	</SECTION>

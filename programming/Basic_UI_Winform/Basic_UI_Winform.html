@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+	<title>Home Page</title>
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta charset="utf-8"/>
+	<meta name="description" content="Youngseok Lee Personal Blog"/>
+	<meta name"author" content="astonisher88@gmail.com" />
+	<link rel="stylesheet" href="../../style.css">	
+	<style type="text/css"> a {text-decoration:none;} </style>
+</head>
+<body id="target">
+	<div id="bgTop"><h1><a href="../../index.html"><font color="white"><p align="center">YOUNGSEOK LEE</p></font></a></h1></div>
+	<header>
+	</header>
+
+	<div id="rectangle"></div>	
+
+	<nav>
+		<ol>
+			<?php
+			// read list.txt and print ( file_get_contents(''); )			
+			//echo file_get_contents('./list.txt');
+			?>
+		</ol>	
+	</nav>
+	
+	<nav id="topMenu">
+	<ul>
+		<li><a class="menuLink" href="../../about_me.html">About me</a></li>
+		<li><a class="menuLink" href="../../resume.html">Resume</a></li>
+		<li><a class="menuLink" href="../../project.html">Project Portfolio</a></li>
+		<li><a class="menuLink" href="../../programming.html">Programming Reference</a></li>
+		<li><a class="menuLink" href="../../contact.html">Contact</a></li>
+	</ul>
+	</nav>	
+	
+		<h2 ID="Article">C# Winform Basic UI Practice</h2>
+		
+	<nav id="leftMenu">		
+		<ul>
+			<li><a href="../Winform.html">Winform</a></li>
+			<li><a href="../Version_Control.html">Version Control Program</a></li>
+			<li><a href="../Web_Service.html">Web Service</a></li>
+			<li><a href="../Design_Web.html">How to Design a Website</a></li>
+			<li><a href="../Host_Web.html">How to Host a Website</a></li>
+			<li><a href="../Algorithm.html">Algorithm Study</a></li>
+			<li><a href="../Data_Structure.html">Data Structure</a></li>
+		</ul>
+	</nav>
+	
+	<SECTION ID="Wrapper"> 
+	<article>
+	<h3>Winform Basic User Interface(UI)</h3>
+	<div align="right"><h6>Updated on September 1st, 2017</h6></div>
+	<p>
+	This post deals with basic user interface components and their functional implementations with C# programming.
+	All UI objects are in design screen and they have distinct names you can call to play around. 
+	
+	</p>
+	<p align="center"><a href="./Basic_UI_Winform.zip" target="_blank">Click to download Source File</a></p>
+	
+	<hr>
+	
+	<p>Here's the program overview.</p>		
+	<p style="text-align:center"><img alt="" height="488" src="Whole.png" width="622" /></p>
+	<p>What we will implement are:<br>
+	1. Textbox 2. Button 3. RichTextBox 4. PictureBox 5. RadioButton&CheckBox</p>	
+	
+	<hr>
+	
+	<p>We have two textBoxes and their names are marked on labels.
+	RichTextBox is multi-line textbox for text-editing and advanced formatting. Here we use for result keeping.</p>	
+	<p style="text-align:center"><img alt="" height="275" src="operationUI.png" width="608" /></p>
+	<p>Upon clicking each operation button, results are added to the richTextBox1.</p>
+	<p style="text-align:center"><img alt="" height="362" src="operationMethod.png" width="642" /></p>
+	<p>The system inputs the two numbers from textBoxes. They look like numbers, but in fact they are strings.
+	This is because textbox only deals with type string. We want to convert type from string to integer for mathematic operations.
+	"int.Parse(Any string)" is the right type conversion. There are also "double.Parse()" and "float.Parse()" if we need to.<br><br>
+	And again, we convert the calculated number back to string for display purpose. Use a method "var.ToString()". 
+	</p>
+	
+	<hr>
+	
+	<p>What if we want to add menu bar on the program?
+	<p style="text-align:center"><img alt="" height="571" src="menuStrip.png" width="800" /></p>
+	<p>Select MenuStrip from toolBox and it will be added. Type to add any menuItem. Menuitem name "-" is reserved for menu divider line.
+	You can assign keyboard Shortcuts to menus in properties.
+	<p style="text-align:center"><img alt="" height="414" src="keyboardShortCut.png" width="303" /></p>	
+	Note the bottom of the screen that "menuStrip1" object is created.
+	This tells the designer that menuStrip was added if not visible. This is useful for fileDialog when the dialog is not
+	visible until executed by the program.</p>	
+	<p style="text-align:center"><img alt="" height="427" src="openFileDialog.png" width="680" /></p>
+	<p>An additional selection screen for openFileDialog will pop up. You can configure its properties such as title, filename and filters with "text|*.extension".
+	Asterisk "*" means all. Therefore *.jpg means filtering out any file name with extension .jpg.</p>
+	<p style="text-align:center"><img alt="" height="204" src="openFD_method.png" width="800" /></p>
+	
+	<hr>
+	<p>Radio Button and CheckBox are typical interfaces for user selection. They are commonly used in user profile creation when you
+	sign up in a website. You can drag and pull from toolBox to your preferred location. It is always better to group the boxes and buttons
+	using groupBox to modify their property together.</p>
+	<p style="text-align:center"><img alt="" height="262" src="buttonMenu_Survey.png" width="630" /></p>	
+	<p>Only one radio button item in a groupBox can be selected. However, checkedBox are there for multiple selections. Use proper
+	input interface for your purpose. Here's a part of button function. ".Checked" handles you checked items. MessageBox is
+	like printf in C++ in their usage resemblance. Whenever you want to debug or explictly show you what's going on, use this. </p>
+	<p style="text-align:center"><img alt="" height="392" src="buttonMethod.png" width="603" /></p>
+	<p>Basic syntax for the box is MessageBox.Show(Content to display, title, options)</p>
+	
+	<hr>
+	
+	<p>For menu item enabled, you may want to display its status.</p>	
+	<p style="text-align:center"><img alt="" height="317" src="menuChecked.png" width="619" /></p>
+	<p style="text-align:center"><img alt="" height="217" src="menuChecked_Method.png" width="628" /></p>
+	<p>".Chcked" is used here as well. The first line of code works as a switch. 
+	When this item menu is clicked(event), checked flag toggles its status.
+	<p align="center">
+	<a href="./Basic_UI_Winform.exe">Download Basic_UI_Winform.exe</a></li>
+	</p>
+	
+	<hr>
+	
+	
+	<h3>Trouble Shootings</h3>
+	<li>For textbox inputs whose types are not numeric, exception handler is needed.</li>
+	<li>Use float instead of int for accuracy. Consider (int) (double) type casting.</li>
+	
+	
+	
+	</SECTION>
+
+</body>	
+</html>
+
+
+
