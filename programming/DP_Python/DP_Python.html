@@ -1,0 +1,351 @@
+<!doctype html>
+<html>
+<head>
+	<title>Home Page</title>
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta charset="utf-8"/>
+	<meta name="description" content="Youngseok Lee Personal Blog"/>
+	<meta name"author" content="astonisher88@gmail.com" />
+	<link rel="stylesheet" href="../../style.css">	
+	<style type="text/css"> a {text-decoration:none;} </style>
+</head>
+<body id="target">
+	<div id="bgTop"><h1><a href="../../index.html"><font color="white"><p align="center">YOUNGSEOK LEE</p></font></a></h1></div>
+	<header>
+	</header>
+
+	<div id="rectangle"></div>	
+
+	<nav>
+		<ol>
+			<?php
+			// read list.txt and print ( file_get_contents(''); )			
+			//echo file_get_contents('./list.txt');
+			?>
+		</ol>	
+	</nav>
+	
+	<nav id="topMenu">
+	<ul>
+		<li><a class="menuLink" href="../../about_me.html">About me</a></li>
+		<li><a class="menuLink" href="../../resume.html">Resume</a></li>
+		<li><a class="menuLink" href="../../project.html">Project Portfolio</a></li>
+		<li><a class="menuLink" href="../../programming.html">Programming Reference</a></li>
+		<li><a class="menuLink" href="../../contact.html">Contact</a></li>
+	</ul>
+	</nav>	
+	
+		<h2 ID="Article">Dynamic Programming - Python</h2>
+		
+	<nav id="leftMenu">		
+		<ul>
+			<li><a href="../Winform.html">Winform</a></li>
+			<li><a href="../Version_Control.html">Version Control Program</a></li>
+			<li><a href="../Web_Service.html">Web Service</a></li>
+			<li><a href="../Design_Web.html">How to Design a Website</a></li>
+			<li><a href="../Host_Web.html">How to Host a Website</a></li>
+			<li><a href="../Algorithm.html">Algorithm Study</a></li>
+			<li><a href="../Data_Structure.html">Data Structure</a></li>
+		</ul>
+	</nav>
+
+<div class="bodyCenter">	
+	<SECTION ID="Wrapper"> 
+	
+	<article>
+	<h3>What is Dynamic Programming?</h3>
+	<div align="right"><h6>Updated on Sep 19th, 2017</h6></div>
+	<p>
+	Dynamic programming(DP) is a method of problem solving by breaking it down to several sub-problems.</p>
+	<p>Memoization is a technique that saves sub-problem results and reuses them. It is effective calculation time wise<br>
+	in sacrifice of memory space. It is recommeneded to use only when there are many overlapping structures.<br>
+	<p>Fibonacci sequence is a well represented example of DP where f(n)=f(n-1)+f(n-2) and f(1)=f(2)=1.<br>
+	In order to calculate f(5), it is necessary to calculate its sub-problem f(4) and f(3).<br>
+	Likewise for f(4), we also need to get f(3) and f(2) where f(3) is overlapped twice. For other sequence,<br>
+	overlapping may occur more than twice depending on the logic, and memoization would save significant time in<br>
+	exchange of little memory space.
+	</p>
+	
+	<hr>	
+	
+	<h3>DP Problem Examples & My Answer</h3>
+
+	<h4>Problem #1 Make One</h4>	
+	There are three operations possible to a integer.<br>
+	Use these three accordingly so that the integer becomes 1 in minimal operations.<br>
+	1) if X is divisible by 3, then able to divide it by 3.<br>
+	2) if X is divisible by 2, then able to divide it by 2.<br>
+	3) Subtract by 1.<br>
+	<p>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:50%;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">min_three</span>(a,b,c):
+    <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">min</span>(<span style="color: #007020">min</span>(a,b),c)
+
+<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">find_optimal</span>(num):
+    <span style="color: #888888">#print num</span>
+    <span style="color: #008800; font-weight: bold">if</span>(num<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">1</span>):
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>
+    <span style="color: #008800; font-weight: bold">else</span>:
+        A <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">10000007</span>
+        B <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">10000007</span>
+        C <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">10000007</span>
+        <span style="color: #008800; font-weight: bold">if</span>(num<span style="color: #333333">%</span><span style="color: #0000DD; font-weight: bold">3</span><span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">0</span>):
+            A <span style="color: #333333">=</span> find_optimal(num<span style="color: #333333">/</span><span style="color: #0000DD; font-weight: bold">3</span>)
+        <span style="color: #008800; font-weight: bold">if</span>(num<span style="color: #333333">%</span><span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">0</span>):
+            B <span style="color: #333333">=</span> find_optimal(num<span style="color: #333333">/</span><span style="color: #0000DD; font-weight: bold">2</span>)
+        C <span style="color: #333333">=</span> find_optimal(num<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>)
+        <span style="color: #008800; font-weight: bold">return</span> min_three(A, B, C) <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>
+    
+<span style="color: #008800; font-weight: bold">print</span> find_optimal(<span style="color: #0000DD; font-weight: bold">10</span>) <span style="color: #888888"># 3</span>
+</pre></div>
+
+
+	<hr>
+	
+	<h4>Problem #2 Make One (Use Memoization)</h4>
+	
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:50%;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">min_three</span>(a,b,c):
+    <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">min</span>(<span style="color: #007020">min</span>(a,b),c)
+
+<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">find_optimal</span>(num, cache<span style="color: #333333">=</span><span style="color: #007020">dict</span>()):
+cache[(<span style="color: #0000DD; font-weight: bold">1</span>)]<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span>
+<span style="color: #008800; font-weight: bold">if</span> num <span style="color: #000000; font-weight: bold">in</span> cache:
+	<span style="color: #008800; font-weight: bold">return</span> cache[(num)]
+<span style="color: #008800; font-weight: bold">if</span>(num<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">1</span>):
+	<span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>
+<span style="color: #008800; font-weight: bold">else</span>:
+	A <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">10000007</span>
+	B <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">10000007</span>
+	C <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">10000007</span>
+	<span style="color: #008800; font-weight: bold">if</span>(num<span style="color: #333333">%</span><span style="color: #0000DD; font-weight: bold">3</span><span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">0</span>):
+		A <span style="color: #333333">=</span> find_optimal(num<span style="color: #333333">/</span><span style="color: #0000DD; font-weight: bold">3</span>) <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>            
+	<span style="color: #008800; font-weight: bold">if</span>(num<span style="color: #333333">%</span><span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">0</span>):
+		B <span style="color: #333333">=</span> find_optimal(num<span style="color: #333333">/</span><span style="color: #0000DD; font-weight: bold">2</span>) <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>
+	C <span style="color: #333333">=</span> find_optimal(num<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>) <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">1</span>
+	
+	cache[(num)] <span style="color: #333333">=</span> min_three(A,B,C)        
+	<span style="color: #008800; font-weight: bold">return</span> cache[(num)]
+
+<span style="color: #008800; font-weight: bold">print</span> find_optimal(<span style="color: #0000DD; font-weight: bold">10</span>)
+</pre></div>
+
+	<hr>
+	
+	<h4>Problem #3 2*N Tiles</h4>	
+	Rectangle of 2*N size is given.<br>
+	Calculate the possible number of combinations that this rectangle <br>
+	can be filled with sub-rectangles of 1x2 and/or 2x1.<br>
+	
+	<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto%;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">find_tile</span>(N):
+<span style="color: #008800; font-weight: bold">if</span>(N<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">1</span>):
+	<span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">1</span>
+<span style="color: #008800; font-weight: bold">elif</span>(N<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">2</span>):
+	<span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">2</span>
+<span style="color: #008800; font-weight: bold">else</span>:
+	<span style="color: #008800; font-weight: bold">return</span> find_tile(N<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>) <span style="color: #333333">+</span> find_tile(N<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">2</span>) <span style="color: #888888"># turns out being finonazzi sequence</span>
+
+<span style="color: #008800; font-weight: bold">print</span> find_tile(<span style="color: #0000DD; font-weight: bold">5</span>)
+</pre></div>
+
+	
+	<hr>
+
+	<h4>Problem #4 2*N Tiles(2)</h4>
+	
+	<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:50%;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">find_tile2</span>(N):
+<span style="color: #008800; font-weight: bold">if</span>(N<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">1</span>):
+	<span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">1</span>
+<span style="color: #008800; font-weight: bold">elif</span>(N<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">2</span>):
+	<span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">3</span>
+<span style="color: #008800; font-weight: bold">else</span>:
+	<span style="color: #008800; font-weight: bold">return</span> find_tile2(N<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>) <span style="color: #333333">+</span> <span style="color: #0000DD; font-weight: bold">2</span><span style="color: #333333">*</span>find_tile2(N<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">2</span>)
+
+<span style="color: #008800; font-weight: bold">print</span> find_tile2(<span style="color: #0000DD; font-weight: bold">5</span>) <span style="color: #888888">#21</span>
+</pre></div>
+
+	
+	<hr>
+
+	<h4>Problem #5 Combination of 1,2 and 3</h4>
+	The possible number of combinations that an integer N can be represented as sums of 1, 2 and/or 3.<br>
+	if N=4, find_combination(N)=7 listing: 1+1+1+1, 1+1+2, 1+2+1, 2+1+1, 2+2, 1+3, 3+1.<br>
+	
+	
+	<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:50%;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">find_combination</span>(N):
+    <span style="color: #008800; font-weight: bold">if</span>(N<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">1</span>):
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">1</span>
+    <span style="color: #008800; font-weight: bold">elif</span>(N<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">2</span>):
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">2</span>
+    <span style="color: #008800; font-weight: bold">elif</span>(N<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">3</span>):
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">4</span>
+    <span style="color: #008800; font-weight: bold">else</span>:
+        <span style="color: #008800; font-weight: bold">return</span> find_combination(N<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>) <span style="color: #333333">+</span> find_combination(N<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">2</span>) <span style="color: #333333">+</span> find_combination(N<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">3</span>)
+
+<span style="color: #008800; font-weight: bold">print</span> find_combination(<span style="color: #0000DD; font-weight: bold">4</span>) <span style="color: #888888"># 7    </span>
+<span style="color: #008800; font-weight: bold">print</span> find_combination(<span style="color: #0000DD; font-weight: bold">10</span>) <span style="color: #888888"># 274</span>
+</pre></div>
+
+	
+	<hr>
+	
+	<h4>Problem #6 Selling Breads</h4>	
+	Given N breads, find the max revenue for different price combinations.<br>
+	P[i] is revenue selling i breads. Find Max revenue selling all.<br>
+
+	
+	<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:50%;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">N <span style="color: #333333">=</span> <span style="color: #007020">int</span>(<span style="color: #007020">raw_input</span>())
+arr <span style="color: #333333">=</span> <span style="color: #007020">map</span>(<span style="color: #007020">int</span>, <span style="color: #007020">raw_input</span>()<span style="color: #333333">.</span>strip()<span style="color: #333333">.</span>split(<span style="background-color: #fff0f0">&#39; &#39;</span>))
+
+<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">find_optimal</span>(arr,num): <span style="color: #888888"># maximum cost by selling &#39;num&#39; items</span>
+    
+    <span style="color: #008800; font-weight: bold">if</span>(num<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">0</span>):
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>
+    <span style="color: #008800; font-weight: bold">if</span>(num<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">1</span>):
+        <span style="color: #008800; font-weight: bold">return</span> arr[<span style="color: #0000DD; font-weight: bold">0</span>]
+    temp <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>
+    <span style="color: #008800; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(<span style="color: #0000DD; font-weight: bold">1</span>,num<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>): <span style="color: #888888"># num is 4,  i being [1, 2, 3, 4]        </span>
+        temp <span style="color: #333333">=</span> <span style="color: #007020">max</span>(temp,find_optimal(arr,num<span style="color: #333333">-</span>i) <span style="color: #333333">+</span> arr[i<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>]) <span style="color: #888888"># opt(3)+cost(1), opt(2)+cost(2), opt(1)+cost(3)</span>
+    <span style="color: #008800; font-weight: bold">print</span> <span style="background-color: #fff0f0">&quot;printing&quot;</span>, arr, num, temp
+    <span style="color: #008800; font-weight: bold">return</span> temp    
+
+<span style="color: #008800; font-weight: bold">print</span> find_optimal(arr,N)
+</pre></div>
+
+	<hr>
+	
+	<h4>Problem #7 Easy Stair Number</h4>
+	It refers to a number whose digit difference is 1<br>
+	Example: 45656(N=5), 1234543456(N=10)<br>
+	Find the possible number of easy stair number whose length is N<br>
+	
+	
+	<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:50%;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">N <span style="color: #333333">=</span> <span style="color: #007020">int</span>(<span style="color: #007020">raw_input</span>())
+<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">find_case</span>(length,ending): <span style="color: #888888"># length=2 and ending 3</span>
+    <span style="color: #888888">#print length,ending</span>
+    <span style="color: #008800; font-weight: bold">if</span>(ending<span style="color: #333333">&lt;</span><span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #000000; font-weight: bold">or</span> ending<span style="color: #333333">&gt;</span><span style="color: #0000DD; font-weight: bold">9</span>):
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>
+    <span style="color: #008800; font-weight: bold">if</span>(length<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">1</span>):
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">1</span>
+    <span style="color: #008800; font-weight: bold">return</span> find_case(length<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>,ending<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>) <span style="color: #333333">+</span> find_case(length<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>,ending<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>)
+<span style="color: #888888">#print find_case(3,1)   </span>
+count <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>
+<span style="color: #008800; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(<span style="color: #0000DD; font-weight: bold">0</span>,<span style="color: #0000DD; font-weight: bold">10</span>):
+    count <span style="color: #333333">=</span> count <span style="color: #333333">+</span> find_case(N,i)
+<span style="color: #008800; font-weight: bold">print</span> count  
+</pre></div>
+
+	
+	<hr>
+	
+	<h4>Problem #8 An Ascending Number</h4>	
+	It refers to a number whose digits are assending.<br>
+	Neighbor digits should assend or can be equal.<br>
+	Example: 12333345, 357, 88888888, 155555999<br>
+	Find the possible number of ascending number whose length is N<br>
+	The first digit of a number can be 0.<br>
+	
+	
+	<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:50%;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">N <span style="color: #333333">=</span> <span style="color: #007020">int</span>(<span style="color: #007020">raw_input</span>())
+<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">find_case2</span>(length,ending): <span style="color: #888888"># length=2 and ending 3</span>
+    <span style="color: #888888">#print length,ending</span>
+    result <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>
+    <span style="color: #008800; font-weight: bold">if</span>(ending<span style="color: #333333">&lt;</span><span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #000000; font-weight: bold">or</span> ending<span style="color: #333333">&gt;</span><span style="color: #0000DD; font-weight: bold">9</span>):
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>
+    <span style="color: #008800; font-weight: bold">if</span>(length<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">1</span>):
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">1</span>
+    <span style="color: #008800; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(<span style="color: #0000DD; font-weight: bold">0</span>,ending<span style="color: #333333">+</span><span style="color: #0000DD; font-weight: bold">1</span>):
+        result <span style="color: #333333">=</span> result <span style="color: #333333">+</span> find_case2(length<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>,i)
+    <span style="color: #008800; font-weight: bold">return</span> result
+count <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>
+<span style="color: #008800; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(<span style="color: #0000DD; font-weight: bold">0</span>,<span style="color: #0000DD; font-weight: bold">10</span>): <span style="color: #888888"># i = [0, 1, 2, ~, 9]</span>
+    count <span style="color: #333333">=</span> count <span style="color: #333333">+</span> find_case2(N,i)
+<span style="color: #008800; font-weight: bold">print</span> count  
+</pre></div>
+    
+	<hr>    
+	
+	<h4>Problem #9 The Friendly Binary</h4>	
+	The number only consists of 0 or 1 is called binary.<br>
+	The friendly binary meets the following<br>
+	1) The first digit is not 0.<br>
+	2) 1 does not appear more than twice in a row. 11 can't be its subnumber<br>
+	Find the possible number of the friendly binary whose length is N.<br>
+	D[N][0] = D[N-1][0] + D[N-1][1]<br>
+	D[N][1] = D[N-1][0]<br>
+	D[N] = D[N][0] + D[N][1]  <br>
+	D[1][1] = 1, D[1][0] = 0<br>
+	
+	
+	<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:50%;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">N <span style="color: #333333">=</span> <span style="color: #007020">int</span>(<span style="color: #007020">raw_input</span>())
+<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">find_case3</span>(length,ending): <span style="color: #888888"># binary_friend</span>
+    <span style="color: #888888">#print length,ending</span>
+    <span style="color: #008800; font-weight: bold">if</span>(ending<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">0</span> <span style="color: #000000; font-weight: bold">and</span> length<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">1</span>):
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>
+    <span style="color: #008800; font-weight: bold">if</span>(ending<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">1</span> <span style="color: #000000; font-weight: bold">and</span> length<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">1</span>):
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">1</span>
+    <span style="color: #008800; font-weight: bold">if</span>(ending<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">0</span>):
+        <span style="color: #008800; font-weight: bold">return</span> find_case3(length<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>,<span style="color: #0000DD; font-weight: bold">0</span>) <span style="color: #333333">+</span> find_case3(length<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>,<span style="color: #0000DD; font-weight: bold">1</span>)
+    <span style="color: #008800; font-weight: bold">elif</span>(ending<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">1</span>):
+        <span style="color: #008800; font-weight: bold">return</span> find_case3(length<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>,<span style="color: #0000DD; font-weight: bold">0</span>)
+    
+count <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>
+<span style="color: #008800; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(<span style="color: #0000DD; font-weight: bold">0</span>,<span style="color: #0000DD; font-weight: bold">2</span>):
+    count <span style="color: #333333">=</span> count <span style="color: #333333">+</span> find_case3(N,i)
+    
+<span style="color: #008800; font-weight: bold">print</span> count   
+</pre></div>
+   
+	<hr>
+	
+	<h4>Problem #10 The Friendly Binary (Different Approach)</h4>	
+
+	D[N] = The friendly binary with length N<br>
+	The last bit is 0 => D[N-1]<br>
+	The last bit is 1 => D[N-2]<br>
+	Therefore, D[N] = D[N-1] + D[N-2]<br>
+	
+	<hr>
+	
+	<h4>Problem #11 Wine Free Sample</h4>		
+	Given N free samples of wine, find the max sample you can drink in this constraint.<br>
+	Cannot drink more than 3 samples together.<br>
+	N=6<br>
+	arr= [6 10 13 9 8 1]<br>
+	max is 6 10 13(skip), 9, 8, 1(skip) => 33<br>
+	max_drink(arr)=33<br>
+	=> 33<br>
+	
+	<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:50%;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">max_drink</span>(arr):
+    n <span style="color: #333333">=</span> <span style="color: #007020">len</span>(arr)
+    <span style="color: #008800; font-weight: bold">if</span>(n<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">0</span>):
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #0000DD; font-weight: bold">0</span>
+    <span style="color: #008800; font-weight: bold">elif</span>(n<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">1</span>):
+        <span style="color: #008800; font-weight: bold">return</span> arr[<span style="color: #0000DD; font-weight: bold">0</span>]
+    <span style="color: #008800; font-weight: bold">elif</span>(n<span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">2</span>):
+        <span style="color: #008800; font-weight: bold">return</span> arr[<span style="color: #0000DD; font-weight: bold">0</span>]<span style="color: #333333">+</span>arr[<span style="color: #0000DD; font-weight: bold">1</span>]   
+    <span style="color: #008800; font-weight: bold">else</span>:
+        <span style="color: #008800; font-weight: bold">return</span> <span style="color: #007020">max</span>(<span style="color: #007020">max</span>(max_drink(arr[:<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>]), max_drink(arr[:<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">2</span>]) <span style="color: #333333">+</span> arr[n<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>]), max_drink(arr[:<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">3</span>]) <span style="color: #333333">+</span> arr[n<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">1</span>] <span style="color: #333333">+</span> arr[n<span style="color: #333333">-</span><span style="color: #0000DD; font-weight: bold">2</span>])
+
+
+N <span style="color: #333333">=</span> <span style="color: #007020">int</span>(<span style="color: #007020">raw_input</span>())
+arr <span style="color: #333333">=</span> <span style="color: #007020">map</span>(<span style="color: #007020">int</span>, <span style="color: #007020">raw_input</span>()<span style="color: #333333">.</span>strip()<span style="color: #333333">.</span>split(<span style="background-color: #fff0f0">&#39; &#39;</span>))
+<span style="color: #008800; font-weight: bold">print</span> max_drink(arr)
+</pre></div>
+
+	<hr>	
+	
+	<p align="center">
+	<a href="Dynamic_Programming.py">View Python source code</a></li>
+	</p>
+	<hr>
+	<h3>Reference</h3>
+	<li>https://youtu.be/0o2hF-To_6Q, Problems are from Startlink, by Baekjoon Choi</li>
+	<li>http://hilite.me/, python code to html display code</li>
+	
+	
+	</SECTION>
+</div>
+</body>	
+</html>
+
+
+
